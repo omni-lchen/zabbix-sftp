@@ -7,7 +7,7 @@ SFTP monitoring with python sftp in zabbix.
 * Response Code: 0=OK, 1=Fail
 * Response Time (ms)
 
-#Prerequisites
+# Prerequisites
 
   * python
   * cryptography
@@ -16,7 +16,7 @@ SFTP monitoring with python sftp in zabbix.
   * jq
   * zabbix sender
 
-#Installation
+# Installation
 
 Install cryptography and pysftp modules in python on zabbix server or zabbix proxy.
 
@@ -50,8 +50,6 @@ Copy the scripts to zabbix server external scripts directory, normally /usr/lib/
 
   * /usr/lib/zabbix/externalscripts# chmod +x sftpCheck.py
   * /usr/lib/zabbix/externalscripts# chmod +x sftpCheck.sh
-  * /usr/lib/zabbix/externalscripts# chown root.zabbix conf/sftp.conf
-  * /usr/lib/zabbix/externalscripts# chmod 640 conf/sftp.conf
 
 Import the sftp check template and create a new host in zabbix, link the template to the new host, set the value of the following macros on the template,
  
