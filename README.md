@@ -26,9 +26,9 @@ Install cryptography and pysftp modules in python on zabbix server or zabbix pro
   * pip install cryptography
   * pip install pysftp
 
-Generate zabbix user ssh key on zabbix server or zabbix proxy.
+Generate zabbix user ssh key on zabbix server or zabbix proxy, ssh key password is required.
 
-    # chmod g+x <zabbix_user_homepath>
+    # chmod g+w <zabbix_user_homepath>
     # mkdir <zabbix_user_homepath>/.ssh
     # chown zabbix. <zabbix_user_homepath>/.ssh
     # sudo -u zabbix ssh-keygen -t rsa
