@@ -18,7 +18,7 @@ SFTP monitoring with python sftp in zabbix.
 
 # Installation
 
-Install cryptography and pysftp modules in python on zabbix server or zabbix proxy.
+Install cryptography and pysftp modules in python on zabbix server or zabbix proxy, below are the installation commands on ubuntu: 
 
   * apt-get install python-pip
   * pip install --upgrade pip
