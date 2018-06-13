@@ -4,7 +4,7 @@ SFTP monitoring with python sftp in zabbix.
 
 # Metrics
 
-* Response Code: 0=OK, 1=Fail
+* Response Code: 0=OK, 1=Failed
 * Response Time (second)
 
 # Prerequisites
