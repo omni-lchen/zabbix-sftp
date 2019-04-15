@@ -110,7 +110,7 @@
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>sftpCheck.sh[&quot;{$SFTP_HOST}&quot;,&quot;{$SFTP_USER}&quot;,&quot;{SFTP_KEY_FILE}&quot;,&quot;{$SFTP_KEY_PASS}&quot;,&quot;{HOST.HOST}&quot;]</key>
+                    <key>sftpCheck.sh[&quot;{$SFTP_HOST}&quot;,&quot;{$SFTP_USER}&quot;,&quot;{$SFTP_KEY_FILE}&quot;,&quot;{$SFTP_KEY_PASS}&quot;,&quot;{HOST.HOST}&quot;]</key>
                     <delay>1m</delay>
                     <history>30d</history>
                     <trends>365d</trends>
