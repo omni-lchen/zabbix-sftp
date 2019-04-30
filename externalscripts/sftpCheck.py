@@ -9,6 +9,8 @@ import sys
 import time
 import json
 import pysftp
+import warnings
+import logging
 
 class sftpCheck(object):
     def __init__(self):
@@ -28,6 +30,14 @@ class sftpCheck(object):
 
     # Connect to sftp server with private key
     def connect(self, h, u, k, kp):
+        # Workaround for: UserWarning: Failed to load HostKeys from /root/.ssh/known_hosts.
+        # You will need to explicitly load HostKeys (cnopts.hostkeys.load(filename)) or disableHostKey checking (cnopts.hostkeys = None).
+        warnings.filterwarnings('ignore', '.*hostkeys = None*',)
+        # Workaround for: No handlers could be found for logger "paramiko.transport"
+        # (see https://github.com/fabric/fabric/issues/51#issuecomment-96341022)
+        logging.basicConfig()
+        paramiko_logger = logging.getLogger("paramiko.transport")
+        paramiko_logger.disabled = True
         if self.__conn is None:
             try:
                 cnopts = pysftp.CnOpts()
@@ -37,7 +47,7 @@ class sftpCheck(object):
                 self.__conn = pysftp.Connection(host=h, username=u, private_key=k, private_key_pass=kp, cnopts=cnopts)
                 self.__conn.timeout = 15
             except Exception as e:
-                print 'Error in sftp connection: %s' % str(e)
+                #print 'Error in sftp connection: %s' % str(e)
                 self.__status = 1
 
     # Check file exists on sftp server
@@ -50,7 +60,7 @@ class sftpCheck(object):
                 if not file:
                     self.__status = 1
             except Exception as e:
-                print 'Error in sftp connection: %s' % str(e)
+                #print 'Error in sftp connection: %s' % str(e)
                 self.__status = 1
 
     # Close sftp connection
